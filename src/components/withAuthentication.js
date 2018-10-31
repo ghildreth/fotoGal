@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AuthUserContext from '.AuthUserContext';
+import AuthUserContext from './AuthUserContext';
 import { firebase } from '../firebase';
 
 const withAuthentication = (Component) => {
@@ -20,7 +20,6 @@ const withAuthentication = (Component) => {
         }
 
         render() {
-            // authUser={this.state.authUser}
             const { authUser } = this.state;
             return (
                 <AuthUserContext.Provider value={authUser}>
@@ -29,6 +28,7 @@ const withAuthentication = (Component) => {
             );
         }
     }
+    return withAuthentication;
 }
 
 export default withAuthentication;
